@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <h1 class="titulo">Formulario Información Alta Telefónica</h1>
+    <form onsubmit="return Valida(this);" action="mailto:martamateu18@gmail.com" name="telefonica" id="formulario">
+        <fieldset>
+            <legend class="legend">Datos Personales</legend>
+            Nombre: <input type="text" id="nombre" maxlength="30" /><br />
+            Apellidos: <input type="text" id="apellidos" maxlength="60" /><br />
+            Dirección: <input type="text" id="direccion" maxlength="60" /><br />
+            Codigo Postal: <input type="text" id="cpostal" pattern="[0-
+9]{5}" onkeyup="Validacp(this)" /><span id="demo"></span><br />
+            Localidad: <input type="text" id="localidad" value="" onkeyup="Validacp(this)" /> <span id="validador">
+            </span> <br />
+        </fieldset>
+        <br />
+        <fieldset>
+            <legend class="legend">Tipo de Contratación</legend>
+            <input type="radio" name="tipoc" value="nuevo" checked="checked">Nueva Contratación
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="tipoc" value="porta">Portabilidad
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="tipoc" value="cambio">Cambio de
+            Contrato
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /><br />
+            Elija la compañía actual:
+            <select name="origen">
+                <option value="movistar">Movistar</option>
+                <option value="orange">Orange</option>
+                <option value="vodafone">Vodafone</option>
+                <option value="yoigo">Yoigo</option>
+                <option value="ninguna">No tengo ninguna
+                    compañía</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            En caso de portabilidad, elija la nueva compañía:
+            <select name="origen">
+                <option value="movistar">Movistar</option>
+                <option value="orange">Orange</option>
+                <option value="vodafone">Vodafone</option>
+                <option value="yoigo">Yoigo</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </fieldset>
+        <fieldset>
+            <legend class="legend">Datos Bancarios</legend>
+            País: <input type="text" id="pais" value="ES" readonly="readonly" /> (sólo válido ES)<br />
+            Control IBAN: <input type="text" id="ciban" placeholder="XX" pattern="[0-9]{2}" /> (dos dígitos)<br />
+            Entidad: <input type="text" id="enti" placeholder="XXXX" pattern="[0-9]{4}" /> (cuatro dígitos)<br />
+            Sucursal: <input type="text" id="suc" placeholder="XXXX" pattern="[0-9]{4}" /> (cuatro dígitos)<br />
+            DC: <input type="text" id="dc" placeholder="XX" pattern="[0-
+9]{2}" /> (dos dígitos)<br />
+            Cuenta: <input type="text" id="cuenta" placeholder="XXXXXXXXXX" pattern="[0-9]{10}" /> (diez dígitos)<br />
+        </fieldset>
+        <fieldset>
+            <legend class="legend">Datos Estadísticos - ¿Cómo nos
+                conoció?</legend>
+            <div class="line"></div>
+            </div>
+            <div class="check">
+                <input id="c1" type="checkbox" name="checkbox" value="1">
+                <label for="c1">A través de TV</label>
+                <input id="c2" type="checkbox" name="checkbox" value="2">
+                <label for="c2">A través de la radio</label>
+                <input id="c3" type="checkbox" name="checkbox" value="3">
+                <label for="c3">A través de Intenet</label>
+                <input id="c4" type="checkbox" name="checkbox" value="4">
+                <label for="c4">Otros</label>
+            </div>
+            <div class="lastSection">
+                <div class="sliderSection">
+                    <p>Valoración:</p>
+                    <div id="slider">
+                        <input class="slider_range" id="sRange" type="range" min="1" max="5" /> Valoración [1 - 5]
+                        <br />
+                    </div>
+                </div>
+                <div class="dateSection">
+                    <label for="selectedDate">Fecha de la
+                        Encuesta:</label>
+                    <input type="date" id="selectedDate" name="currentDate" value="2019-01-01" min="2019-01-01"
+                        max="2025-12-31">
+                </div>
+            </div>
+        </fieldset>
+        <input type="submit" value="Enviar Datos" />
+        <input type="reset" onclick="limpiarFormulario()" value="Borrar
+Datos" />
+    </form>
+    <div class="botones2">
+        <button onclick="valoracionbtn()" class="BD" type="button">Mostrar valoración</button>
+        <button onclick="cuentabtn()" class="BD" type="button">Mostrar
+            cuenta</button>
+        <button onclick="diabtn()" class="BD" type="button">Mostrar dia
+            semana</button>
+    </div>
+</body>
+
+</html>
